@@ -6,6 +6,7 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
+
 // const ingredientsLink = document.getElementById("ingredients");
 // const ingredientsArr = [...ingredients].map((element) => {
 //   const itemsEl = document.createElement("li");
