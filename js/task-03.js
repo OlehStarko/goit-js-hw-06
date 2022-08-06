@@ -12,43 +12,58 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
-
 const galleryLink = document.querySelector(".gallery");
-
-galleryLink.classList.add("my-style");
-document.getElementsByClassName("my-style")[0].style =
-  "display:flex; justify-content:center; padding:0px";
-
-const itemsEl = () => {
-  const itemsProperties = document.createElement("li");
-  itemsProperties.style.listStyle = "none";
-  itemsProperties.style.marginLeft = "15px";
-  itemsProperties.style.marginRight = "15px";
-
-  return itemsProperties;
-};
-
-const imgEl = () => {
-  const imgProperties = document.createElement("img");
-  imgProperties.width = 320;
-  imgProperties.height = 210;
-  imgProperties.style.borderRadius = "24px";
-
-  return imgProperties;
-};
-
-const addImages = images.map((element) => {
-  const addImgLink = imgEl();
-  addImgLink.src = element.url;
-
-  return addImgLink;
+const createGalleryItem = images.map((element) => {
+  galleryLink.insertAdjacentHTML(
+    "beforeEnd",
+    `<li><img src="${element.url}" alt="${element.alt}" style="width:320px; height:210px;border-radius:16px;margin:15px"></li>`
+  );
 });
+galleryLink.setAttribute(
+  "style",
+  "list-style-type:none; display: flex; justify-content:center; "
+);
 
-const insertImgToItems = addImages.map((element) => {
-  const itemElement = itemsEl();
-  itemElement.appendChild(element);
+//FIRST VARIANT
 
-  return itemElement;
-});
+// const galleryLink = document.querySelector(".gallery");
 
-galleryLink.append(...insertImgToItems);
+// galleryLink.classList.add("my-style");
+// document.getElementsByClassName("my-style")[0].style =
+//   "display:flex; justify-content:center; padding:0px";
+
+// const itemsEl = () => {
+//   const itemsProperties = document.createElement("li");
+//   itemsProperties.style.listStyle = "none";
+//   itemsProperties.style.marginLeft = "15px";
+//   itemsProperties.style.marginRight = "15px";
+
+//   return itemsProperties;
+// };
+
+// const imgEl = () => {
+//   const imgProperties = document.createElement("img");
+//   imgProperties.width = 320;
+//   imgProperties.height = 210;
+//   imgProperties.style.borderRadius = "24px";
+
+//   return imgProperties;
+// };
+
+// const addImages = images.map((element) => {
+//   const addImgLink = imgEl();
+//   addImgLink.src = element.url;
+
+//   return addImgLink;
+// });
+
+// const insertImgToItems = addImages.map((element) => {
+//   const itemElement = itemsEl();
+//   itemElement.appendChild(element);
+
+//   return itemElement;
+// });
+
+// galleryLink.append(...insertImgToItems);
+
+//SECOND VARIANT

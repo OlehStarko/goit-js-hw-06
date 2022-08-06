@@ -11,32 +11,32 @@ const ingredients = [
 
 // const ingredientsLink = document.getElementById("ingredients");
 
-// const ingredientsArr = [...ingredients].map((element) => {
+// const createIngredientEl = () => {
 //   const itemsEl = document.createElement("li");
 //   itemsEl.classList.add("title");
-//   itemsEl.textContent = element;
 
 //   return itemsEl;
+// };
+
+// const addIngredientTextContent = ingredients.map((element) => {
+//   const addTextContent = createIngredientEl();
+//   addTextContent.textContent = element;
+
+//   return addTextContent;
 // });
 
-// ingredientsLink.append(...ingredientsArr);
+// ingredientsLink.append(...addIngredientTextContent);
 
 //SECOND VARIANT
 
 const ingredientsLink = document.getElementById("ingredients");
 
-const createIngredientEl = () => {
+const ingredientsArr = [...ingredients].map((element) => {
   const itemsEl = document.createElement("li");
   itemsEl.classList.add("title");
+  itemsEl.textContent = element;
 
   return itemsEl;
-};
-
-const addIngredientTextContent = ingredients.map((element) => {
-  const addTextContent = createIngredientEl();
-  addTextContent.textContent = element;
-
-  return addTextContent;
 });
 
-ingredientsLink.append(...addIngredientTextContent);
+ingredientsLink.append(...ingredientsArr);
